@@ -11,7 +11,7 @@
 
 # Project Wayfarer
 
-Project wayfarer is ...
+Project wayfarer is fun social travel blog used as a guide for users to find their next great adventure!
 
 # User Flow
 

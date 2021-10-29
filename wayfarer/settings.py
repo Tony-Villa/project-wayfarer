@@ -14,12 +14,12 @@ from pathlib import Path
 from decouple import config
 import os
 import django_heroku
-import json
 from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -28,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['https://project-two-wayfarer.herokuapp.com']
@@ -89,7 +90,7 @@ WSGI_APPLICATION = 'wayfarer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('NAME'),
         'USER': config('USER'),
         'PASSWORD': config('PASSWORD'),
@@ -146,5 +147,5 @@ django_heroku.settings(locals())
 LOGOUT_REDIRECT_URL = '/'
 
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(config('DATABASE_URL'),conn_max_age=600, ssl_require=True)
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config(config('DATABASE_URL'),conn_max_age=600, ssl_require=True)

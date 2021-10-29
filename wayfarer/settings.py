@@ -16,6 +16,7 @@ import os
 import django_heroku
 from django.core.exceptions import ImproperlyConfigured
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -148,4 +149,5 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 # import dj_database_url
-# DATABASES['default'] = dj_database_url.config(config('DATABASE_URL'),conn_max_age=600, ssl_require=True)
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)

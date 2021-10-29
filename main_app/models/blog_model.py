@@ -36,9 +36,9 @@ recommendation = [
 
 
 class Blog(models.Model):
-    title = models.CharField(max_length=200,min_length=1)
+    title = models.CharField(max_length=200)
     post = models.TextField(max_length=4000)
-    img = models.CharField(max_length=1024, default=City.img)
+    img = models.CharField(max_length=1024, default='')
     created_at = models.DateTimeField(auto_now_add=True)
 
     # city = models.ForeignKey(City, on_delete=CASCADE, related_name='cities')

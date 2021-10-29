@@ -29,9 +29,7 @@ class Profile_View(TemplateView):
     template_name='user/profile.html'
 
     def get_context_data(self, **kwargs):
-        return super().get_context_data(**kwargs)
-
+        context = super().get_context_data(**kwargs)
         context['profile'] =  Profile.objects.filter(user = self.request.user)
-        
         return context
 

@@ -1,1 +1,21 @@
-//
+@use '../abstracts/functions' as *;
+
+.nav-bar {
+  height: get-size(14);
+  background-color: $prime-color;
+  box-shadow: 0 4px 1px -2px #0c7070;
+  border-bottom-left-radius: get-size(3);
+  border-bottom-right-radius: get-size(3);
+}
+
+.nav-content-container {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+}

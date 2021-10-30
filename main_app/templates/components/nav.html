@@ -1,5 +1,21 @@
 <nav class="nav-bar">
-  <section class="nav-logo">
-    <h2 class="logo">W</h2>
-  </section>
+  <div class="nav-content-container flex">
+    <section class="nav-logo">
+      <h2 class="logo">W</h2>
+    </section>
+    {% if user.is_authenticated %}
+    <section class="search-bar">
+      <input type="text" placeholder="Search for City" />
+    </section>
+    <section class="user-options">
+      <h3 class="logged-in-name">{{user.username}}</h3>
+      <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+    </section>
+    {% else %}
+    <section class="user-options flex">
+      <a class="nav-link" href="{% url 'login' %}">Log In</a>
+      <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+    </section>
+    {% endif %}
+  </div>
 </nav>

@@ -15,4 +15,12 @@ main {
   display: none;
 }
 
+h1 {
+  background-image: linear-gradient(to right, #fdce96, #f3c092, #e7b38f, #daa78b, #cc9b87);
+}
+
+button {
+  background: linear-gradient(to right, #fdce96, #f3c092, #e7b38f, #daa78b, #cc9b87);
+}
+
 /*# sourceMappingURL=main.css.map */

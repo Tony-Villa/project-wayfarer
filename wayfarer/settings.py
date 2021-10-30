@@ -147,6 +147,8 @@ django_heroku.settings(locals())
 
 LOGOUT_REDIRECT_URL = '/'
 
+LOGIN_REDIRECT_URL = '/user/profile'
+
 
 # import dj_database_url
 import dj_database_url

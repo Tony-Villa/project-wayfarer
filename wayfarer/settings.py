@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 import os
 import django_heroku
+from django.core.exceptions import ImproperlyConfigured
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,7 +33,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['https://project-two-wayfarer.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -90,7 +91,12 @@ WSGI_APPLICATION = 'wayfarer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'DATABASE_URL' : config('DATABASE_URL')
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
+        'PORT': config('PORT'),
     }
 }
 
@@ -144,4 +150,4 @@ LOGOUT_REDIRECT_URL = '/'
 
 # import dj_database_url
 import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600, ssl_require=True)

@@ -6,6 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.base import TemplateView
 
+
 from main_app.models.user_model import Profile 
 class Signup(View):
     # show a form to fill out

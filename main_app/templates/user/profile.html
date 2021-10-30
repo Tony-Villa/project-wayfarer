@@ -1,1 +1,14 @@
+{%extends 'layout/base.html' %}
+{% block content %}
+
 <h1>This is the profile</h1>
+
+<p>{{user.username}}</p>
+<img src='{{user.profile.img}}'>
+<p>{{user.profile.cur_city}}</p>
+
+
+
+
+
+{% endblock %}

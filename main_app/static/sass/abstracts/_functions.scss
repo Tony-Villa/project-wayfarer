@@ -1,6 +1,10 @@
 @use 'sass:map';
 @import './sizes';
 
-@function get-font-size-level($level) {
-  @return map-get($font-size-levels, '#{$level}');
+@function get-font-size($level) {
+  @return map-get($size-levels, '#{$level}');
+}
+
+@function get-spacing($level) {
+  @return map-get($size-levels, '#{$level}');
 }

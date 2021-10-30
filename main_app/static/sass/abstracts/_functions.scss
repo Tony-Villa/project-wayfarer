@@ -8,3 +8,7 @@
 @function get-spacing($level) {
   @return map-get($size-levels, '#{$level}');
 }
+
+@function get-size($level) {
+  @return map-get($size-levels, '#{$level}');
+}

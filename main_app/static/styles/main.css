@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 80rem;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

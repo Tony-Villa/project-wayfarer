@@ -1,1 +1,31 @@
-//
+@use '../base/breakpoints' as *;
+
+@mixin xs-screen {
+  @media (max-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin sm-screen {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin md-screen {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin lg-screen {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}

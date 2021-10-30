@@ -1,1 +1,6 @@
-// scss functions go here
+@use 'sass:map';
+@import './sizes';
+
+@function get-font-size-level($level) {
+  @return map-get($font-size-levels, '#{$level}');
+}

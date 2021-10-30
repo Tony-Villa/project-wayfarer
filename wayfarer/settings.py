@@ -14,24 +14,13 @@ from pathlib import Path
 from decouple import config
 import os
 import django_heroku
-import json
 from django.core.exceptions import ImproperlyConfigured
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
-
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
-
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -40,7 +29,8 @@ def get_secret(setting, secrets=secrets):
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['https://project-two-wayfarer.herokuapp.com']
@@ -101,12 +91,12 @@ WSGI_APPLICATION = 'wayfarer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': get_secret('NAME'),
-        'USER': get_secret('USER'),
-        'PASSWORD': get_secret('PASSWORD'),
-        'HOST': get_secret('HOST'),
-        'PORT': get_secret('PORT'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
+        'PORT': config('PORT'),
     }
 }
 
@@ -158,3 +148,7 @@ django_heroku.settings(locals())
 LOGOUT_REDIRECT_URL = '/'
 
 LOGIN_REDIRECT_URL = '/user/profile'
+
+# import dj_database_url
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)

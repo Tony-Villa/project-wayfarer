@@ -14,7 +14,6 @@ from pathlib import Path
 from decouple import config
 import os
 import django_heroku
-from django.core.exceptions import ImproperlyConfigured
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -91,12 +90,7 @@ WSGI_APPLICATION = 'wayfarer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('NAME'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'),
-        'PORT': config('PORT'),
+        'DATABASE_URL' : config('DATABASE_URL')
     }
 }
 

@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+<!--  -->
+{% block content %}
+<h1>This is the blog show page</h1>
+<h2>{{ blog.title }}</h2>
+<img src='{{blog.img }}'>
+<p>{{ blog.post }}</p>
+<p>{{ blog.city }}</p>
+
+<p>By: {{ blog.profile.name }}</p>
+
+
+
+
+{% endblock %}

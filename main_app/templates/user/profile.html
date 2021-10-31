@@ -4,4 +4,6 @@
 <h1>This is the profile</h1>
 <p>{{ user.username }}</p>
 
+<a href="{% url 'update' user.profile.pk %}"><button>edit</button></a>
+
 {% endblock %}

@@ -15,7 +15,7 @@ from main_app.models.blog_model import Blog
 class Blog_Create(CreateView):
     model = Blog
     fields = ['title', 'img', 'post', 'profile', 'city', 'reccomendation']
-    template_name = 'user/blog_create.html'
+    template_name = 'blog/blog_create.html'
     success_url = '/user/profile'
 
     def get_initial(self):
@@ -24,4 +24,4 @@ class Blog_Create(CreateView):
 
 class Blog_View(DetailView):
     model = Blog 
-    template_name='user/blog_show.html'
+    template_name='blog/blog_show.html'

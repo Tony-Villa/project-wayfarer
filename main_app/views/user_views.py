@@ -5,9 +5,12 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import UpdateView 
+from django.urls import reverse
 
 
-from main_app.models.user_model import Profile 
+
+from main_app.models.user_model import User, Profile 
 class Signup(View):
     # show a form to fill out
     def get(self, request):
@@ -33,4 +36,10 @@ class Profile_View(TemplateView):
         context = super().get_context_data(**kwargs)
         context['profile'] =  Profile.objects.filter(user = self.request.user)
         return context
+
+class Profile_Update(UpdateView):
+    model = Profile
+    fields = ['name', 'img', 'cur_city']
+    template_name = 'user/profile_update.html'
+    success_url = 'user/profile'
 

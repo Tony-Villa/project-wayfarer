@@ -7,6 +7,6 @@ from .views import *
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('accounts/signup/',views.Signup.as_view(),name= "signup"),
-    path('user/profile', views.Profile_View.as_view(), name='profile'),
-
+    path('user/profile/', views.Profile_View.as_view(), name='profile'),
+    path('user/profile/<int:pk>/update', views.Profile_Update.as_view(), name='update')
     ]

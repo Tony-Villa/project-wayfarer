@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import UpdateView 
+from django.views.generic.edit import UpdateView, DeleteView  
 from django.urls import reverse
 
 
@@ -41,5 +41,15 @@ class Profile_Update(UpdateView):
     model = Profile
     fields = ['name', 'img', 'cur_city']
     template_name = 'user/profile_update.html'
-    success_url = 'user/profile'
+
+    def get_success_url(self):
+        return reverse('profile')
+
+
+class Profile_Delete(DeleteView):
+    model = Profile
+    template_name = 'user/profile_delete_confirmation.html'
+    success_url = '/'
+
+
 

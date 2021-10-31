@@ -1,11 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Martel+Sans&family=Yantramanav&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #ecebf3;
+}
+
+body {
+  background-color: #356770;
 }
 
 main {
-  max-width: 80rem;
+  max-width: 76rem;
   margin: 0 auto;
   margin-top: 2.5rem;
   padding-bottom: 3rem;
@@ -15,12 +21,54 @@ main {
   display: none;
 }
 
-h1 {
-  background-image: linear-gradient(to right, #fdce96, #f3c092, #e7b38f, #daa78b, #cc9b87);
+.header-font {
+  font-family: "Yantramanav", sans-serif;
 }
 
-button {
-  background: linear-gradient(to right, #fdce96, #f3c092, #e7b38f, #daa78b, #cc9b87);
+.sub-head-font {
+  font-family: "Martel Sans", sans-serif;
+}
+
+.content-font {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.nav-bar {
+  height: 3rem;
+  background-color: #7ba47f;
+  box-shadow: 0 4px 1px -2px #0c7070;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.nav-content-container {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-options {
+  width: 12%;
+  justify-content: space-between;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=main.css.map */

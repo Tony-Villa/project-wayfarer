@@ -1,3 +1,25 @@
-h1 {
-  background-image: $accent-gradient;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Martel+Sans&family=Yantramanav&display=swap');
+
+// font-family: 'Yantramanav', sans-serif;
+// font-family: 'Martel Sans', sans-serif;
+// font-family: 'Libre Franklin', sans-serif;
+
+$header-font: 'Yantramanav', sans-serif;
+$sub-head-font: 'Martel Sans', sans-serif;
+$content-font: 'Libre Franklin', sans-serif;
+
+.header-font {
+  font-family: $header-font;
+}
+
+.sub-head-font {
+  font-family: $sub-head-font;
+}
+
+.content-font {
+  font-family: $content-font;
+}
+
+.text-bold {
+  font-weight: bold;
 }

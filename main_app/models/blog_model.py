@@ -10,12 +10,11 @@ class Blog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     img = models.CharField(max_length=1024, default='')
     city = models.ForeignKey(City, on_delete=CASCADE, related_name='cities')
-    profile = models.ManyToManyField(Profile)
+    profile = models.ForeignKey(Profile, on_delete=CASCADE, related_name='profiles')
     reccomendation = models.ManyToManyField(Reccomendation)
 
     def __str__(self):
         return self.title
-
 
 class Comment(models.Model):
     content = models.CharField(max_length=255)

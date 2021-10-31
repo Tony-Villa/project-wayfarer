@@ -8,9 +8,13 @@
 
 body {
   background-color: #356770;
+  height: 90vh;
 }
 
-main {
+.main-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
   max-width: 76rem;
   margin: 0 auto;
   margin-top: 2.5rem;
@@ -69,6 +73,32 @@ main {
 .nav-link {
   text-decoration: none;
   font-size: 1.25rem;
+}
+
+.landing-container {
+  height: 100%;
+}
+
+.welcome-img-container {
+  height: 50%;
+}
+
+.landing-img {
+  height: 25.5rem;
+}
+
+.landing-title {
+  justify-content: center;
+  margin-top: 2rem;
+}
+.landing-title h1 {
+  font-size: 2.5rem;
+}
+
+.testimonial-container {
+  margin-top: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.25rem;
 }
 
 /*# sourceMappingURL=main.css.map */

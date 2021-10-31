@@ -1,1 +1,27 @@
-//
+@use '../abstracts/functions' as *;
+
+.landing-container {
+  height: 100%;
+}
+
+.welcome-img-container {
+  height: 50%;
+}
+
+.landing-img {
+  height: 25.5rem;
+}
+
+.landing-title {
+  justify-content: center;
+  margin-top: get-spacing(10);
+  h1 {
+    font-size: get-font-size(12);
+  }
+}
+
+.testimonial-container {
+  margin-top: get-spacing(8);
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: get-spacing(7);
+}

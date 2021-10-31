@@ -21,14 +21,11 @@
     <script src="{% static 'scripts/app.js' %}"></script>
   </head>
   <body>
-    <nav>
-      <!--  -->
-      {% block nav %} {% endblock %}
-    </nav>
-
-    <div class="main-content">
+    {% include '../components/nav.html' %}
+    <!--  -->
+    <main class="main-content">
       <!--  -->
       {% block content %} {% endblock %}
-    </div>
+    </main>
   </body>
 </html>

@@ -1,9 +1,16 @@
+// abstracts
 @import './abstracts/variables';
 
+// base
 @import './base/reset';
 @import './base/typography';
 
+// component
 @import './components/buttons';
 
+// layout
 @import './layout/layoutClasses';
 @import './layout/navbar';
+
+// pages
+@import './pages/landingNoLog';

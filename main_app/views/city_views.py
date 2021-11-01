@@ -23,3 +23,17 @@ class City_View(DetailView):
         context = super().get_context_data(**kwargs)
         context['blogs'] = Blog.objects.all()
         return context
+
+class City_Create(CreateView):
+    model = City
+    fields = ['name', 'img', 'country']
+    template_name = 'city/city_create.html'
+    success_url = '<int:pk>'
+
+class City_List(TemplateView):
+    template_name = 'city/city_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cities'] =  City.objects.all()
+        return context

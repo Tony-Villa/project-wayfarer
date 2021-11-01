@@ -1,11 +1,17 @@
 @use '../abstracts/functions' as *;
 
 .nav-bar {
-  height: get-size(14);
-  background-color: $prime-color;
-  box-shadow: 0 4px 1px -2px #0c7070;
-  border-bottom-left-radius: get-size(3);
-  border-bottom-right-radius: get-size(3);
+  height: get-size(20);
+  position: absolute;
+  top: 0;
+  z-index: 30;
+  width: 100%;
+  margin: 0 auto;
+  position: sticky;
+  // box-shadow: 0 4px 1px -2px #0c7070;
+  // background-color: $prime-color;
+  // border-bottom-left-radius: get-size(3);
+  // border-bottom-right-radius: get-size(3);
 }
 
 .nav-content-container {
@@ -17,11 +23,16 @@
 }
 
 .user-options {
-  width: 12%;
+  width: 15%;
   justify-content: space-between;
+  align-items: center;
+}
+
+.divider-line {
+  font-size: get-font-size(8);
 }
 
 .nav-link {
   text-decoration: none;
-  font-size: get-font-size(7);
+  font-size: get-font-size(6);
 }

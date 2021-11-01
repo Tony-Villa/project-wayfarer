@@ -6,20 +6,30 @@
 }
 
 body {
+  position: relative;
   background-color: $bg-color;
   height: 90vh;
+  width: 100%;
 }
 
 .main-content {
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 76rem; // 1216px
   margin: 0 auto;
+}
+
+.content-container {
+  max-width: 76rem; // 1216px
   margin-top: 2.5rem;
   padding-bottom: 3rem;
+  margin: 0 auto;
 }
 
 .hidden {
   display: none;
+}
+
+.no-dec {
+  text-decoration: none;
 }

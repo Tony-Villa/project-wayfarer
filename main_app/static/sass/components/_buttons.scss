@@ -1,4 +1,10 @@
-//
-// button {
-//   background: $accent-gradient;
-// }
+@use '../abstracts/functions' as *;
+
+.cta-btn-link {
+  padding: get-spacing(2) get-spacing(5);
+  border-radius: get-size(6);
+  background: $accent-gradient;
+  //   text-shadow: 1px 1px 0px #242323;
+  color: $bg-color;
+  font-weight: bold;
+}

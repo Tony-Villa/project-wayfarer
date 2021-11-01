@@ -7,6 +7,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import UpdateView, DeleteView  
 from django.urls import reverse
+from ..models.blog_model import Blog
+from ..models.user_model import Profile 
 
 
 
@@ -35,6 +37,7 @@ class Profile_View(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['profile'] =  Profile.objects.filter(user = self.request.user)
+        context['blogs'] = Blog.objects.all()
         return context
 
 class Profile_Update(UpdateView):

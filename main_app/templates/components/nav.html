@@ -1,7 +1,7 @@
 <nav class="nav-bar">
   <div class="nav-content-container flex">
     <section class="nav-logo">
-      <h2 class="logo header-font">W</h2>
+      <h2 class="logo header-font">lookC</h2>
     </section>
     {% if user.is_authenticated %}
     <section class="search-bar">
@@ -14,7 +14,8 @@
     {% else %}
     <section class="user-options flex">
       <a class="nav-link sub-head-font" href="{% url 'login' %}">Log In</a>
-      <a class="nav-link sub-head-font" href="{% url 'signup' %}">Sign Up</a>
+      <p class="divider-line">|</p>
+      <a class="nav-link sub-head-font cta-btn-link" href="{% url 'signup' %}">Sign Up</a>
     </section>
     {% endif %}
   </div>

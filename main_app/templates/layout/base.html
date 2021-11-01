@@ -18,7 +18,7 @@
 
     <!-- connecting static js/css -->
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
-    <script src="{% static 'scripts/app.js' %}"></script>
+    <script defer src="{% static 'scripts/app.js' %}"></script>
   </head>
   <body>
     {% include '../components/nav.html' %}
@@ -27,5 +27,11 @@
       <!--  -->
       {% block content %} {% endblock %}
     </main>
+
+  <!-- animation scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
   </body>
 </html>

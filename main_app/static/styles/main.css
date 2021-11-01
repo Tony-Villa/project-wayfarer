@@ -7,18 +7,24 @@
 }
 
 body {
-  background-color: #356770;
+  position: relative;
+  background-color: #0c1b33;
   height: 90vh;
+  width: 100%;
 }
 
 .main-content {
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 76rem;
   margin: 0 auto;
+}
+
+.content-container {
+  max-width: 76rem;
   margin-top: 2.5rem;
   padding-bottom: 3rem;
+  margin: 0 auto;
 }
 
 .hidden {
@@ -41,6 +47,14 @@ body {
   font-weight: bold;
 }
 
+.cta-btn-link {
+  padding: 0.25rem 0.875rem;
+  border-radius: 1rem;
+  background: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
+  color: #0c1b33;
+  font-weight: bold;
+}
+
 .flex {
   display: flex;
 }
@@ -50,11 +64,13 @@ body {
 }
 
 .nav-bar {
-  height: 3rem;
-  background-color: #7ba47f;
-  box-shadow: 0 4px 1px -2px #0c7070;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  height: 4.5rem;
+  position: absolute;
+  top: 0;
+  z-index: 30;
+  width: 100%;
+  margin: 0 auto;
+  position: sticky;
 }
 
 .nav-content-container {
@@ -66,25 +82,57 @@ body {
 }
 
 .user-options {
-  width: 12%;
+  width: 15%;
   justify-content: space-between;
+  align-items: center;
+}
+
+.divider-line {
+  font-size: 1.5rem;
 }
 
 .nav-link {
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
-.landing-container {
-  height: 100%;
+.welcome-container {
+  height: 100vh;
+  width: 90rem;
 }
 
-.welcome-img-container {
-  height: 50%;
+.welcome-tagline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 7rem;
+  transform: translate(-60%, -90%);
+  z-index: -2;
 }
 
 .landing-img {
-  height: 25.5rem;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -3;
+}
+
+.mid-rocks {
+  z-index: -1;
+}
+
+.welcome-bottom-content {
+  width: 100%;
+  z-index: 2;
+  min-height: 100vh;
+  height: 100vh;
+  position: absolute;
+  background-color: #0c1b33;
+}
+
+.top-pad {
+  margin-top: 5rem;
 }
 
 .landing-title {
@@ -96,9 +144,14 @@ body {
 }
 
 .testimonial-container {
+  margin-top: 3rem;
   margin-top: 1.5rem;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.25rem;
+  gap: 3rem;
+}
+
+.test-font {
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=main.css.map */

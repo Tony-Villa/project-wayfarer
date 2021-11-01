@@ -31,6 +31,10 @@ body {
   display: none;
 }
 
+.no-dec {
+  text-decoration: none;
+}
+
 .header-font {
   font-family: "Yantramanav", sans-serif;
 }

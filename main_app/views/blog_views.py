@@ -21,12 +21,17 @@ class Blog_View(DetailView):
 
 class Blog_Create(CreateView):
     model = Blog
-    fields = ['title', 'img', 'post', 'profile', 'city', 'reccomendation']
+    fields = ['title', 'img', 'post', 'profile', 'city']
     template_name = 'blog/blog_create.html'
     success_url = '/user/profile'
 
     def get_initial(self):
-        return {'profile': self.kwargs.get("pk")}
+        return {'profile': self.kwargs.get("pk"), 'reccomendation': self.kwargs.get('reccomendation')}
+
+    def get_success_url(self):
+        pk = self.object.pk
+        return reverse('blog', kwargs={'pk': pk})
+
 
 class Blog_Update(UpdateView):
     model = Blog

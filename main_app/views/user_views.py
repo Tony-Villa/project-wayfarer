@@ -31,7 +31,7 @@ class Signup(View):
             context = {"form": form}
             return render(request, "registration/signup.html", context)
 
-
+@method_decorator(login_required, name='dispatch')
 class Profile_View(TemplateView):
     #get the users pk and pass it to the url's 
     template_name='user/profile.html'

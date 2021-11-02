@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as *;
+
 * {
   margin: 0;
   padding: 0;
@@ -20,10 +22,19 @@ body {
 }
 
 .content-container {
-  max-width: 76rem; // 1216px
+  // max-width: 76rem; // 1216px
+  padding: 0 20rem;
   margin-top: 2.5rem;
   padding-bottom: 3rem;
   margin: 0 auto;
+
+  @include md-screen {
+    padding: 0 10rem;
+  }
+
+  @include xs-screen {
+    padding: 0 1rem;
+  }
 }
 
 .hidden {

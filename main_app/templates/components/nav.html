@@ -11,11 +11,11 @@
     </section>
     <section class="user-options flex">
       <h3 class="logged-in-name">{{user.username}}</h3>
-      <a class="nav-link sub-head-font" href="{% url 'logout' %}">Log Out</a>
+      <a class="nav-link under-link sub-head-font" href="{% url 'logout' %}">Log Out</a>
     </section>
     {% else %}
     <section class="user-options flex">
-      <a class="nav-link sub-head-font" href="{% url 'login' %}">Log In</a>
+      <a class="nav-link under-link sub-head-font" href="{% url 'login' %}">Log In</a>
       <p class="divider-line">|</p>
       <a class="nav-link sub-head-font cta-btn-link" href="{% url 'signup' %}">Sign Up</a>
     </section>

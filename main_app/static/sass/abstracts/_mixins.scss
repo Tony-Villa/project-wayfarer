@@ -7,25 +7,25 @@
 }
 
 @mixin sm-screen {
-  @media (min-width: #{$screen-sm}) {
+  @media (max-width: #{$screen-sm}) {
     @content;
   }
 }
 
 @mixin md-screen {
-  @media (min-width: #{$screen-md}) {
+  @media (max-width: #{$screen-md}) {
     @content;
   }
 }
 
 @mixin lg-screen {
-  @media (min-width: #{$screen-lg}) {
+  @media (max-width: #{$screen-lg}) {
     @content;
   }
 }
 
 @mixin xl-screen {
-  @media (min-width: #{$screen-xl}) {
+  @media (max-width: #{$screen-xl}) {
     @content;
   }
 }

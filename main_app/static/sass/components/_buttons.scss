@@ -7,4 +7,18 @@
   //   text-shadow: 1px 1px 0px #242323;
   color: $bg-color;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.under-link {
+  background-image: $accent-gradient;
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  text-decoration: none;
+  transition: background-size 300ms ease;
+
+  &:hover {
+    background-size: 100% 3px;
+  }
 }

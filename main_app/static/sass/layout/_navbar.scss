@@ -1,4 +1,5 @@
 @use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
 
 .nav-bar {
   height: get-size(20);
@@ -8,24 +9,34 @@
   width: 100%;
   margin: 0 auto;
   position: sticky;
-  // box-shadow: 0 4px 1px -2px #0c7070;
-  // background-color: $prime-color;
-  // border-bottom-left-radius: get-size(3);
-  // border-bottom-right-radius: get-size(3);
 }
 
 .nav-content-container {
-  max-width: 80rem;
+  // max-width: 80rem;
+  width: 100%;
+  padding: 3rem 10rem;
   height: 100%;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+
+  @include md-screen {
+    padding: 0 7rem;
+  }
 }
 
 .user-options {
   width: 15%;
   justify-content: space-between;
   align-items: center;
+
+  @include md-screen {
+    width: 28%;
+  }
+
+  @include sm-screen {
+    width: 45%;
+  }
 }
 
 .divider-line {

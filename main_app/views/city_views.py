@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from main_app.models.city_model import City
 
-@method_decorator(login_required, name='dispatch')
+
 class City_View(DetailView):
     model = City
     template_name = 'city/city_show.html'
@@ -23,12 +23,6 @@ class City_View(DetailView):
         context['blogs'] = Blog.objects.all()
         return context
 
-class City_Create(CreateView):
-    model = City
-    fields = ['name', 'img', 'country']
-    template_name = 'city/city_create.html'
-    success_url = '<int:pk>'
-
 class City_List(TemplateView):
     template_name = 'city/city_list.html'
 
@@ -36,3 +30,10 @@ class City_List(TemplateView):
         context = super().get_context_data(**kwargs)
         context['cities'] =  City.objects.all()
         return context
+        
+@method_decorator(login_required, name='dispatch')
+class City_Create(CreateView):
+    model = City
+    fields = ['name', 'img', 'country']
+    template_name = 'city/city_create.html'
+    success_url = '<int:pk>'

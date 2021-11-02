@@ -30,11 +30,9 @@ $content-font: 'Libre Franklin', sans-serif;
   font-size: get-font-size(10);
 }
 
-// vertical break
-.vr {
-  display: inline;
-  height: 100%;
-  width: get-size(4);
-  border: 1px inset;
-  margin: 5px;
+input,
+textarea,
+select,
+option {
+  color: black;
 }

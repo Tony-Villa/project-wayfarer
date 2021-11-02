@@ -6,6 +6,11 @@
   color: #ecebf3;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   position: relative;
   background-color: #0c1b33;
@@ -22,9 +27,9 @@ body {
 
 .content-container {
   padding: 0 20rem;
-  margin-top: 2.5rem;
   padding-bottom: 3rem;
   margin: 0 auto;
+  margin-top: 2.5rem;
 }
 @media (max-width: 87.5rem) {
   .content-container {

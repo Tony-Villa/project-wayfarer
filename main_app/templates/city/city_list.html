@@ -1,19 +1,27 @@
 {% extends 'layout/base.html' %}
 <!--  -->
 {% block content %}
-<h1>City List</h1>
 
+<div class="content-container">
+  <h1>City List</h1>
 
-<a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
-<a href="{% url 'city_create' %}">Create City</a>
+  <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
+  <a href="{% url 'city_create' %}">Create City</a>
 
+  {% for city in cities %}
 
-{% for city in cities %}
+  <!-- <p><a href="{% url 'city' city.pk %}"> {{ city }}</a></p> -->
 
-<p><a href="{% url 'city' city.pk %}"> {{ city }}</a></p>
+  <section class="cities-container">
+    <div class="city-card">
+      <img class="city-img" src="{{ city.img }}" alt="" />
+      <div class="city-card-content">
+        <h2 class="city-title header-font">{{city.name}}</h2>
+        <p>{{city.country}}</p>
+      </div>
+    </div>
+  </section>
 
-
-
-
-{% endfor %}
+  {% endfor %}
+</div>
 {% endblock %}

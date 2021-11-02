@@ -1,0 +1,10 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.city-img {
+  height: get-size(12);
+}
+
+// .city-card {
+
+// }

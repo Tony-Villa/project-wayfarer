@@ -244,9 +244,14 @@ option {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 87.5rem) {
+  .options-container {
+    margin-top: 1.5rem;
+  }
+}
 
 .landing-options {
-  width: 30%;
+  width: 40%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -258,6 +263,17 @@ option {
 
 .landing-options {
   margin-top: 1.5rem;
+}
+@media (max-width: 87.5rem) {
+  .landing-options {
+    margin-top: 0.75rem;
+  }
+}
+
+.cities-container {
+  width: 75%;
+  margin: 1rem;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=main.css.map */

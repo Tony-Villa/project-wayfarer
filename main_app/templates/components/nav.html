@@ -2,7 +2,11 @@
   <div class="nav-content-container flex">
     <section class="nav-logo">
       <h2 class="logo header-font">
+        {% if user.is_authenticated %}
+        <a class="no-dec" href="/city">lookC</a>
+        {%else%}
         <a class="no-dec" href="/">lookC</a>
+        {% endif %}
       </h2>
     </section>
     {% if user.is_authenticated %}

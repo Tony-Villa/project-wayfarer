@@ -1,4 +1,5 @@
 @use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
 
 // .landing-container {
 //   height: 100%;
@@ -14,16 +15,19 @@
 
 .welcome-container {
   height: 100vh;
-  width: 90rem;
 }
 
 .welcome-tagline {
   position: absolute;
+  font-size: 7rem;
   top: 50%;
   left: 50%;
-  font-size: 7rem;
   transform: translate(-60%, -90%);
   z-index: -3;
+
+  @include sm-screen {
+    padding-top: get-spacing(9);
+  }
 }
 
 .landing-img {
@@ -49,8 +53,8 @@
 .welcome-bottom-content {
   width: 100%;
   z-index: 2;
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 125vh;
+  // height: 150vh;
   position: absolute;
   background-color: $bg-color;
 }
@@ -68,12 +72,39 @@
 }
 
 .testimonial-container {
-  margin-top: 3rem;
   margin-top: get-spacing(8);
   grid-template-columns: 1fr 1fr 1fr;
   gap: get-spacing(14);
+
+  @include xs-screen {
+    grid-template-columns: 1fr;
+    margin-top: get-spacing(4);
+  }
 }
 
 .test-font {
   font-size: get-font-size(7);
+  padding: get-spacing(6);
+}
+
+.options-container {
+  margin-top: get-spacing(16);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-options {
+  width: 30%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tagline {
+  font-size: get-font-size(15);
+}
+
+.landing-options {
+  margin-top: get-spacing(8);
 }

@@ -11,7 +11,6 @@ from django.urls import reverse
 from main_app.models.blog_model import Blog
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-
 from main_app.models.city_model import City
 
 @method_decorator(login_required, name='dispatch')

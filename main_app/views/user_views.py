@@ -7,10 +7,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import UpdateView, DeleteView  
 from django.urls import reverse
-
-
-
+from ..models.blog_model import Blog
+from ..models.user_model import Profile 
 from main_app.models.user_model import User, Profile 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
+
 class Signup(View):
     # show a form to fill out
     def get(self, request):
@@ -28,6 +31,7 @@ class Signup(View):
             context = {"form": form}
             return render(request, "registration/signup.html", context)
 
+
 class Profile_View(TemplateView):
     #get the users pk and pass it to the url's 
     template_name='user/profile.html'
@@ -35,8 +39,10 @@ class Profile_View(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['profile'] =  Profile.objects.filter(user = self.request.user)
+        context['blogs'] = Blog.objects.all()
         return context
-
+        
+@method_decorator(login_required, name='dispatch')
 class Profile_Update(UpdateView):
     model = Profile
     fields = ['name', 'img', 'cur_city']

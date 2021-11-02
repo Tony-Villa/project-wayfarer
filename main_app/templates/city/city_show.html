@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+<!--  -->
+{% block content %}
+<h1>This is the City show page</h1>
+<h2>{{ city.name }}</h2>
+<img src='{{ city.img }}'>
+<p>{{ city.country }}</p>
+
+{% for blog in blogs %}
+{% if blog.city == city %}
+<p><a href="{% url 'blog' blog.pk %}">{{ blog.title }}</a></p>
+
+
+
+{% endif %}
+{% endfor %}
+
+
+
+
+{% endblock %}

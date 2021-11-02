@@ -51,13 +51,6 @@ body {
   font-weight: bold;
 }
 
-input,
-textarea,
-select,
-option {
-  color: black;
-}
-
 .cta-btn-link {
   padding: 0.25rem 0.875rem;
   border-radius: 1rem;

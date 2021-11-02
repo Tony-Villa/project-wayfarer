@@ -8,6 +8,7 @@
 // component
 @import './components/buttons';
 @import './components/borders';
+@import './components/city_thumb';
 
 // layout
 @import './layout/layoutClasses';
@@ -15,3 +16,4 @@
 
 // pages
 @import './pages/landingNoLog';
+@import './pages/cityList';

@@ -92,10 +92,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include md-screen {
+    margin-top: get-spacing(8);
+  }
 }
 
 .landing-options {
-  width: 30%;
+  width: 40%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -107,4 +111,8 @@
 
 .landing-options {
   margin-top: get-spacing(8);
+
+  @include md-screen {
+    margin-top: get-spacing(4);
+  }
 }

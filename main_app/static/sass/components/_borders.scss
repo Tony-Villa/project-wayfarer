@@ -7,3 +7,34 @@
   border-image: $accent-gradient;
   border-image-slice: 1;
 }
+
+.page-header {
+  position: relative;
+  display: inline-block;
+  font-size: get-font-size(19);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+  }
+
+  &::before {
+    display: block;
+    background: $bg-color;
+    left: -1.25rem;
+    right: -1.25rem;
+    z-index: -2;
+  }
+
+  &::after {
+    background: $accent-gradient;
+    width: 80vw;
+    height: 22.5%;
+    left: 50%;
+    bottom: 40%;
+    transform: translateX(-50%);
+    z-index: -3;
+  }
+}

@@ -106,6 +106,10 @@ option {
   border-image-slice: 1;
 }
 
+.city-img {
+  height: 2.5rem;
+}
+
 .flex {
   display: flex;
 }

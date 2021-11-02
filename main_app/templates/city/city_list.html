@@ -8,16 +8,14 @@
   <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
   <a href="{% url 'city_create' %}">Create City</a>
 
-  <!-- <p><a href="{% url 'city' city.pk %}"> {{ city }}</a></p> -->
   <section class="cities-container flex">
     {% for city in cities %}
 
     <div class="city-card">
       <img class="city-img" src="{{ city.img }}" alt="" />
       <div class="city-card-content">
-        <h2 class="city-title header-font">{{city.name}}</h2>
-        <p>{{city.country}}</p>
-      </div>
+          <h2 class="city-title header-font">{{city.name}}</h2>
+          <p>{{city.country}}</p>
     </div>
 
     {% endfor %}

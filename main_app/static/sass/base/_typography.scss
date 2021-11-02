@@ -1,3 +1,5 @@
+@use '../abstracts/functions' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Martel+Sans&family=Yantramanav&display=swap');
 
 // font-family: 'Yantramanav', sans-serif;
@@ -22,4 +24,17 @@ $content-font: 'Libre Franklin', sans-serif;
 
 .text-bold {
   font-weight: bold;
+}
+
+.md-font {
+  font-size: get-font-size(10);
+}
+
+// vertical break
+.vr {
+  display: inline;
+  height: 100%;
+  width: get-size(4);
+  border: 1px inset;
+  margin: 5px;
 }

@@ -2,7 +2,7 @@
 <!--  -->
 {% block content %}
 
-<div class="content-container">
+<div class="content-container city-list-content">
   <h1>City List</h1>
 
   <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
@@ -11,12 +11,15 @@
   <section class="cities-container flex">
     {% for city in cities %}
 
+    <!-- <a href="{% url 'city' city.pk %}"> -->
     <div class="city-card">
       <img class="city-img" src="{{ city.img }}" alt="" />
-      <div class="city-card-content">
-          <h2 class="city-title header-font">{{city.name}}</h2>
-          <p>{{city.country}}</p>
+      <div div class="city-card-content">
+        <h2 class="city-card-title header-font">{{city.name}}</h2>
+        <p class="city-card-country header-font">{{city.country}}</p>
+      </div>
     </div>
+    <!-- </a> -->
 
     {% endfor %}
   </section>

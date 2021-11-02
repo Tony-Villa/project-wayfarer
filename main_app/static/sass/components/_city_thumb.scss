@@ -1,10 +1,92 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
 
-.city-img {
-  height: get-size(12);
+.city-card {
+  position: relative;
+  min-width: 20rem;
+  min-height: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
+  margin: get-spacing(4);
+  overflow: hidden;
+  background: $dark-bg;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: get-size(6);
+    bottom: get-size(6);
+    left: get-size(6);
+    right: get-size(6);
+  }
+
+  &::before {
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-image: $accent-gradient;
+    border-image-slice: 1;
+    transform: scale(0, 1);
+    transition: transform ease-out 250ms;
+  }
+
+  &::after {
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-image: $accent-gradient;
+    border-image-slice: 1;
+    transform: scale(1, 0);
+    transition: transform ease-out 250ms;
+  }
+
+  &:hover::before {
+    transform: scale(1, 1);
+  }
+
+  &:hover:after {
+    transform: scale(1, 1);
+  }
 }
 
-// .city-card {
+.city-img {
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: block;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity ease-out 250ms;
+}
 
+.city-card:hover .city-img {
+  opacity: 0.4;
+}
+
+.city-card-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.city-card-title {
+  font-size: get-font-size(15);
+  font-weight: bold;
+  text-shadow: 2px 3px 2px #242323;
+  width: fit-content;
+  text-align: center;
+}
+
+.city-card-country {
+  text-align: center;
+  font-size: get-font-size(7);
+  text-shadow: 2px 3px 2px #242323;
+}
+
+// a {
+//   text-decoration: none;
 // }

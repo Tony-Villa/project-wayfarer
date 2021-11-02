@@ -1,8 +1,14 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
 
+.city-list-content {
+  margin-top: get-size(12);
+}
+
 .cities-container {
-  width: 75%;
-  margin: get-size(6);
+  width: 85%;
+  margin: get-size(12) auto;
   justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }

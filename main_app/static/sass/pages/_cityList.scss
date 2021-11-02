@@ -9,10 +9,30 @@
   justify-content: center;
 }
 
+.create-options {
+  margin-top: get-spacing(12);
+  margin-bottom: get-spacing(12);
+  justify-content: space-between;
+}
+
 .cities-container {
   width: 85%;
   margin: get-size(12) auto;
   justify-content: space-between;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+
+.create-city {
+  flex-direction: column;
+  align-items: center;
+}
+
+// .squeeze-city-text {
+//   width: 30%;
+// }
+
+.create-link {
+  font-weight: bold;
+  font-size: get-font-size(10);
 }

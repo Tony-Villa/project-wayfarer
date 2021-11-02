@@ -30,6 +30,7 @@
     border-image-slice: 1;
     transform: scale(0, 1);
     transition: transform ease-out 250ms;
+    pointer-events: none;
   }
 
   &::after {
@@ -41,6 +42,7 @@
     border-image-slice: 1;
     transform: scale(1, 0);
     transition: transform ease-out 250ms;
+    pointer-events: none;
   }
 
   &:hover::before {

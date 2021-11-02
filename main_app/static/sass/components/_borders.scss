@@ -18,18 +18,23 @@
     content: '';
     position: absolute;
     height: 100%;
-    display: block;
   }
 
   &::before {
-    background: lightblue;
-    width: 100%;
+    display: block;
+    background: $bg-color;
+    left: -1.25rem;
+    right: -1.25rem;
+    z-index: -2;
   }
 
   &::after {
-    background: yellow;
-    width: 100vw;
+    background: $accent-gradient;
+    width: 80vw;
+    height: 22.5%;
     left: 50%;
-    transform: translate(-50%);
+    bottom: 40%;
+    transform: translateX(-50%);
+    z-index: -3;
   }
 }

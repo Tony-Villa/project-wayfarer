@@ -2,6 +2,7 @@ from django.db import models
 from .user_model import Profile
 from .rec_model import Reccomendation
 from .city_model import City
+from django.contrib import admin
 from django.db.models.deletion import CASCADE
 
 class Blog(models.Model):

@@ -32,10 +32,17 @@ class Blog_Update(UpdateView):
     model = Blog
     fields = ['title', 'img', 'post', 'reccomendation']
     template_name = 'blog/blog_update.html'
-    success_url = '/city'
+
+    def get_success_url(self):
+        pk = self.object.pk
+        return reverse('blog', kwargs={'pk': pk})
 
 
 class Blog_Delete(DeleteView):
     model = Blog
     template_name = 'blog/blog_delete_confirmation.html'
     success_url = '/city'
+
+    def get_success_url(self):
+        pk = self.object.city.pk
+        return reverse('city', kwargs={'pk': pk})

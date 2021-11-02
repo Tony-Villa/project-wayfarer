@@ -18,7 +18,14 @@
 
     <!-- connecting static js/css -->
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+
     <script defer src="{% static 'scripts/app.js' %}"></script>
+<!-- 
+    <script defer src={% block script %} {%endblock %}></script> 
+  
+-->
+    
+
   </head>
   <body>
     {% include '../components/nav.html' %}

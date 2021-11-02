@@ -3,10 +3,14 @@
 {% block content %}
 
 <div class="content-container city-list-content">
-  <h1>City List</h1>
+  <div class="intro flex">
+    <h1 class="page-header header-font">Visit a City</h1>
+  </div>
 
-  <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
-  <a href="{% url 'city_create' %}">Create City</a>
+  <div class="create-options">
+    <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
+    <a href="{% url 'city_create' %}">Create City</a>
+  </div>
 
   <section class="cities-container flex">
     {% for city in cities %}

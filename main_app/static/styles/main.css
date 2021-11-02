@@ -65,12 +65,11 @@ body {
   font-size: 2rem;
 }
 
-.vr {
-  display: inline;
-  height: 100%;
-  width: 0.75rem;
-  border: 1px inset;
-  margin: 5px;
+input,
+textarea,
+select,
+option {
+  color: black;
 }
 
 .cta-btn-link {

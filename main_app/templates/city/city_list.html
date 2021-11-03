@@ -1,19 +1,41 @@
 {% extends 'layout/base.html' %}
 <!--  -->
 {% block content %}
-<h1>City List</h1>
 
+<div class="content-container city-list-content">
+  <div class="intro-header flex">
+    <h1 class="page-header header-font">Visit a City</h1>
+  </div>
 
-<a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
-<a href="{% url 'city_create' %}">Create City</a>
+  <div class="create-options flex">
+    <div class="create-blog flex">
+      <h4 class="create-blog-header sub-head-font">Create a blog</h4>
+      <a class="circle-btn-link" href="{% url 'blog_create' user.profile.pk %}">
+        <span>+</span>
+      </a>
+    </div>
+    <div class="create-city flex">
+      <h4 class="create-city-header sub-head-font">Don't see your city?</h4>
+      <div class="squeeze-city-text">
+        <a class="under-link center-text content-font create-link" href="{% url 'city_create' %}"> Add City</a>
+      </div>
+    </div>
+  </div>
 
+  <section class="cities-container flex">
+    {% for city in cities %}
 
-{% for city in cities %}
+    <div class="city-card">
+      <a href="{% url 'city' city.pk %}">
+        <img class="city-img" src="{{ city.img }}" alt="" />
+        <div div class="city-card-content">
+          <h2 class="city-card-title header-font">{{city.name}}</h2>
+          <p class="city-card-country header-font">{{city.country}}</p>
+        </div>
+      </a>
+    </div>
 
-<p><a href="{% url 'city' city.pk %}"> {{ city }}</a></p>
-
-
-
-
-{% endfor %}
+    {% endfor %}
+  </section>
+</div>
 {% endblock %}

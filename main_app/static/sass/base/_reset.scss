@@ -7,6 +7,11 @@
   color: #ecebf3;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   position: relative;
   background-color: $bg-color;
@@ -22,11 +27,10 @@ body {
 }
 
 .content-container {
-  // max-width: 76rem; // 1216px
   padding: 0 20rem;
-  margin-top: 2.5rem;
   padding-bottom: 3rem;
   margin: 0 auto;
+  margin-top: 2.5rem;
 
   @include md-screen {
     padding: 0 10rem;

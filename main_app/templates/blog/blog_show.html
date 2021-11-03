@@ -6,10 +6,35 @@
 <img src='{{blog.img }}'>
 <p>{{ blog.post }}</p>
 <p>{{ blog.city }}</p>
+<a href="{% url 'blog_update' blog.pk %}"><button style='background-color: green;padding:10px;'>edit</button></a>
+<a href="{% url 'blog_delete' blog.pk %}"><button style='background-color: red;padding:10px;'>Delete</button></a>
 
 <p>By: {{ blog.profile.name }}</p>
 
 
+  <h2>Add a new comment</h2>
+  <form action="{% url 'blog' blog.pk %}" method="post">
+    
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Add comment"></p>
+  </form>
+<br>
+<br>
+<br>
 
+{% if not blog.blogs.all %}
+    No Comments Yet...
+{% else %}
+
+    {% for comment in blog.blogs.all %}
+        {{comment.profile.name }}
+        {{comment.created_at | timesince }} <p>ago</p>
+        <br>
+        {{comment.content}}
+        <br>
+        <br>
+    {% endfor %}
+{% endif %}
 
 {% endblock %}

@@ -1,9 +1,8 @@
 {% extends 'layout/base.html' %} 
 {% block content %}
-<h1 class="pt-3">Update {{profile.name}}</h1>
+<h1 class="pt-3">Update {{blog.title}}</h1>
 
-{% if request.user.is_authenticated and request.user.profile.user == profile.user %}
-
+{% if request.user.is_authenticated and request.user.profile.pk == blog.profile.pk %}
   <form action="" method="post">
     {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit" />
   </form>
@@ -11,5 +10,4 @@
   <p>Nope</p>
 
 {% endif %}
-
 {% endblock %}

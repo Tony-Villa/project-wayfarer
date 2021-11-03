@@ -127,11 +127,8 @@ option {
 }
 
 .accent-border {
-  border-width: 4px;
-  border-style: solid;
+  border: 4px solid #ff964d;
   border-radius: 1rem;
-  border-image: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
-  border-image-slice: 1;
 }
 
 .page-header {
@@ -275,8 +272,73 @@ option {
   }
 }
 
+.search-content {
+  position: relative;
+  width: 20vw;
+  margin-right: 35%;
+}
+@media (max-width: 87.5rem) {
+  .search-content {
+    margin-right: 15%;
+    margin-left: 0.5rem;
+  }
+}
+
 .search-bar {
+  position: relative;
   justify-self: center;
+  margin-right: 80%;
+  border: 2px solid orange;
+  border-radius: 30rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  background-color: white;
+  overflow: hidden;
+  transition: width 300ms cubic-bezier(0.18, 0.7, 0.26, 1.15);
+}
+.search-bar .search-bar-input {
+  flex-grow: 1;
+  font-size: 1.25rem;
+  border: none;
+  background: none;
+  padding: 0 0.5rem;
+  padding-left: 1rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 2.25rem;
+  cursor: pointer;
+  opacity: 0;
+}
+.search-bar .search-bar-input:focus {
+  outline: 0;
+}
+.search-bar .search-bar-submit {
+  font-size: 1.25rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  background: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
+  margin-left: auto;
+  width: 2rem;
+  height: 2rem;
+}
+.search-bar .search-bar-submit:hover, .search-bar .search-bar-submit:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+.search-bar:focus-within {
+  width: 100%;
+}
+.search-bar:focus-within .search-bar-input {
+  opacity: 100;
+  cursor: initial;
+}
+
+.all-cities-link {
+  margin-right: 2rem;
 }
 
 .user-options {
@@ -415,8 +477,9 @@ option {
   margin-top: 2.5rem;
 }
 
-.intro {
+.intro-header {
   justify-content: center;
+  margin-top: 4.25rem;
 }
 
 .create-options {
@@ -441,6 +504,20 @@ option {
 .create-link {
   font-weight: bold;
   font-size: 2rem;
+}
+
+.banner-container {
+  width: 100vw;
+  position: relative;
+  margin-top: get-spacing(12);
+}
+
+.city-show-banner {
+  position: absolute;
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

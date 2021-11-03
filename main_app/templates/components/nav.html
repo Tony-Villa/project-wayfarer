@@ -24,9 +24,13 @@
         </button>
       </section>
     </div>
+
+    <section class="all-cities-link">
+      <a class="no-dec sub-head-font under-link" href="/city">Browse Cities</a>
+    </section>
     <section class="user-options flex">
       <h3 class="logged-in-name sub-head-font">
-        <a class="no-dec" href="user/profile/"> {{user.username}} </a>
+        <a class="no-dec under-link" href="/user/profile/"> {{user.username}} </a>
       </h3>
       <a class="nav-link under-link sub-head-font" href="{% url 'logout' %}">Log Out</a>
     </section>

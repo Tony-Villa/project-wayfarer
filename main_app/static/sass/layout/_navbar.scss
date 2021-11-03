@@ -28,14 +28,19 @@
 .search-content {
   position: relative;
   width: 20vw;
-  margin-right: 40%;
+  margin-right: 35%;
+
+  @include md-screen {
+    margin-right: 15%;
+    margin-left: get-spacing(3);
+  }
 }
 
 .search-bar {
   position: relative;
   justify-self: center;
   margin-right: 80%;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+  // box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
   border: 2px solid orange;
   border-radius: 30rem;
   height: get-size(11);
@@ -90,6 +95,10 @@
       cursor: initial;
     }
   }
+}
+
+.all-cities-link {
+  margin-right: get-spacing(10);
 }
 
 .user-options {

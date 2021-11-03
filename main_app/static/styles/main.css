@@ -278,14 +278,19 @@ option {
 .search-content {
   position: relative;
   width: 20vw;
-  margin-right: 40%;
+  margin-right: 35%;
+}
+@media (max-width: 87.5rem) {
+  .search-content {
+    margin-right: 15%;
+    margin-left: 0.5rem;
+  }
 }
 
 .search-bar {
   position: relative;
   justify-self: center;
   margin-right: 80%;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
   border: 2px solid orange;
   border-radius: 30rem;
   height: 2.25rem;
@@ -333,6 +338,10 @@ option {
 .search-bar:focus-within .search-bar-input {
   opacity: 100;
   cursor: initial;
+}
+
+.all-cities-link {
+  margin-right: 2rem;
 }
 
 .user-options {
@@ -498,6 +507,20 @@ option {
 .create-link {
   font-weight: bold;
   font-size: 2rem;
+}
+
+.banner-container {
+  width: 100vw;
+  position: relative;
+  margin-top: get-spacing(12);
+}
+
+.city-show-banner {
+  position: absolute;
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,5 @@
 from django.db import models
-from .user_model import Profile
+from .user_model import Profile, User
 from .rec_model import Reccomendation
 from .city_model import City
 from django.contrib import admin
@@ -21,7 +21,7 @@ class Comment(models.Model):
     content = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     blog = models.ForeignKey(Blog, on_delete=CASCADE, related_name='blogs')
-    profile = models.ManyToManyField(Profile)
+    profile = models.ForeignKey(Profile, on_delete=CASCADE, related_name='comment_profiles')
 
     def __str__(self):
-        return self.created_at
+        return f"${self.profile.name}'s Comment: ${self.content}"

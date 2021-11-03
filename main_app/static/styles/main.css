@@ -245,26 +245,107 @@ option {
   text-shadow: 2px 3px 2px #242323;
 }
 
-.blog-card {
+.blog-card-container {
+  width: 100%;
+  height: 25rem;
   margin: 1rem 0;
   padding: 1rem;
+  background-color: #e9f1f7;
+  position: relative;
+  z-index: 0;
+}
+.blog-card-container:hover img {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+.blog-card-container:hover .blog-card-title a {
+  color: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
 }
 
-.blog-card-title {
-  text-align: center;
+.blog-card-img {
+  margin: 0.125rem;
+  height: 100%;
   width: 100%;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 60%);
+  overflow: hidden;
+  z-index: -2;
+  background: #232528;
+}
+
+.blog-card-img-content {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: all ease-out 250ms;
 }
 
 .blog-card-details {
+  background: #e9f1f7;
+  margin: 1rem;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  padding: 1rem 0.5rem;
+  flex-direction: column;
   justify-content: space-between;
+  width: 92.5%;
+  height: 40%;
+}
+
+.blog-card-title {
+  width: 100%;
+  height: 100%;
+  size: 2.5rem;
+}
+.blog-card-title a {
+  color: #0c1b33;
 }
 
 .blog-card-author {
   font-size: 0.875rem;
+  color: #0c1b33;
 }
 
-.blog-card-content {
-  width: 70%;
+.blog-card-content p {
+  color: #0c1b33;
+}
+
+.blog-card-btn {
+  background: white;
+  color: #0c1b33;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 0;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  display: inline-block;
+  padding: 0;
+  border: none;
+}
+.blog-card-btn:focus {
+  box-shadow: none;
+}
+.blog-card-btn:hover {
+  background: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
+  color: #e9f1f7;
+}
+
+.blog-card-btn-icon {
+  padding-right: 1.5rem;
+}
+.blog-card-btn-icon i {
+  padding: 0px 30px 0px 15px;
+  margin-right: 10px;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  vertical-align: bottom;
+  color: white;
+  background: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
+  clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 }
 
 .flex {

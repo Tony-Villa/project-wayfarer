@@ -25,8 +25,80 @@
   }
 }
 
+.search-content {
+  position: relative;
+  width: 20vw;
+  margin-right: 35%;
+
+  @include md-screen {
+    margin-right: 15%;
+    margin-left: get-spacing(3);
+  }
+}
+
 .search-bar {
+  position: relative;
   justify-self: center;
+  margin-right: 80%;
+  // box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+  border: 2px solid orange;
+  border-radius: 30rem;
+  height: get-size(11);
+  width: get-size(11);
+  background-color: white;
+  overflow: hidden;
+  transition: width 300ms cubic-bezier(0.18, 0.7, 0.26, 1.15);
+
+  .search-bar-input {
+    flex-grow: 1;
+    font-size: get-font-size(7);
+    border: none;
+    background: none;
+    padding: 0 get-spacing(3);
+    padding-left: 1rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    line-height: get-size(11);
+    cursor: pointer;
+    opacity: 0;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .search-bar-submit {
+    font-size: get-font-size(7);
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    background: $accent-gradient;
+    margin-left: auto;
+    width: get-size(10);
+    height: get-size(10);
+
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  &:focus-within {
+    width: 100%;
+
+    .search-bar-input {
+      opacity: 100;
+      cursor: initial;
+    }
+  }
+}
+
+.all-cities-link {
+  margin-right: get-spacing(10);
 }
 
 .user-options {

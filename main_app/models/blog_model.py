@@ -18,7 +18,7 @@ class Blog(models.Model):
         return self.title
 
 class Comment(models.Model):
-    content = models.CharField(max_length=255)
+    content = models.TextField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     blog = models.ForeignKey(Blog, on_delete=CASCADE, related_name='blogs')
     profile = models.ForeignKey(Profile, on_delete=CASCADE, related_name='comment_profiles')

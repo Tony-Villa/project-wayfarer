@@ -12,13 +12,12 @@
 <p>By: {{ blog.profile.name }}</p>
 
 
-  <h2>Add a new comment</h2>
-  <form action="{% url 'blog' blog.pk %}" method="post">
-    
+<h2>Add a new comment</h2>
+<form action="{% url 'blog' blog.pk %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <p><input type="submit" value="Add comment"></p>
-  </form>
+</form>
 <br>
 <br>
 <br>
@@ -27,7 +26,7 @@
     No Comments Yet...
 {% else %}
 
-    {% for comment in blog.blogs.all %}
+    {% for comment in blog.blogs.all reversed %}
         {{comment.profile.name }}
         {{comment.created_at | timesince }} <p>ago</p>
         <br>

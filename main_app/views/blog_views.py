@@ -23,7 +23,7 @@ class Blog_View(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form'] = CommentForm()
+        context['form'] = CommentForm(initial={'blog': self.get_object(), 'profile': self.request.user.profile})
         return context
 
     def post(self, request, *args, **kwargs):

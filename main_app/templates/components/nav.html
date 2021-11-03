@@ -25,7 +25,9 @@
       </section>
     </div>
     <section class="user-options flex">
-      <h3 class="logged-in-name sub-head-font">{{user.username}}</h3>
+      <h3 class="logged-in-name sub-head-font">
+        <a class="no-dec" href="user/profile/"> {{user.username}} </a>
+      </h3>
       <a class="nav-link under-link sub-head-font" href="{% url 'logout' %}">Log Out</a>
     </section>
     {% else %}

@@ -6,16 +6,35 @@
   <div class="banner-container">
     <img class="city-show-banner" src="{{ city.img }}" />
   </div>
-  <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
   <h2>{{ city.name }}</h2>
   <p>{{ city.country }}</p>
 
-  {% for blog in blogs reversed %} {% if blog.city == city %}
-  <p><a href="{% url 'blog' blog.pk %}"> {{ blog.title }} </a></p>
+  <div class="content-container flex city-show-bottom">
+    <div class="quarter-width accent-border pad-sect">
+      <p>City Container</p>
+    </div>
+    <div class="three-quarter-width pad-sect">
+      <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
+      <div class="blog-container">
+        {% for blog in blogs reversed %} {% if blog.city == city %}
+        <div class="blog-card accent-border-thin">
+          <h3 class="blog-card-title">
+            <a class="header-font no-dec font-bold" href="{% url 'blog' blog.pk %}"> {{ blog.title }} </a>
+          </h3>
+          <div class="flex blog-card-details">
+            <h3 class="blog-card-author sub-head-font">By: {{blog.profile.name}}</h3>
+            <div class="blog-card-content">
+              <p class="content-font">{{blog.post}}</p>
+            </div>
+          </div>
+        </div>
 
-  {% endif %}
-  <!--  -->
-  {% endfor %}
+        {% endif %}
+        <!--  -->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

@@ -1,7 +1,11 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
 .banner-container {
   width: 100vw;
   position: relative;
   margin-top: get-spacing(12);
+  height: 65vh;
 }
 
 .city-show-banner {
@@ -10,4 +14,9 @@
   height: 65vh;
   object-fit: cover;
   object-position: 50% 50%;
+  z-index: -2;
+}
+
+.pad-sect {
+  padding: get-spacing(8);
 }

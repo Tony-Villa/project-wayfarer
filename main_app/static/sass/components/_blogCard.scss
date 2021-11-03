@@ -1,0 +1,23 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.blog-card {
+  margin: get-spacing(6) 0;
+  padding: get-spacing(6);
+}
+.blog-card-title {
+  text-align: center;
+  width: 100%;
+}
+
+.blog-card-details {
+  justify-content: space-between;
+}
+
+.blog-card-author {
+  font-size: get-font-size(5);
+}
+
+.blog-card-content {
+  width: 70%;
+}

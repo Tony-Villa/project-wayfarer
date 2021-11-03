@@ -9,29 +9,38 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.views.generic import DetailView   
 from django.urls import reverse
-from main_app.models.blog_model import Blog
+from main_app.forms import CommentForm
+from main_app.models.blog_model import Blog, Comment, Profile 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.views.generic import FormView
+from django.views.generic.detail import SingleObjectMixin
 
 @method_decorator(login_required, name='dispatch')
 class Blog_View(DetailView):
     model = Blog 
     template_name='blog/blog_show.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForm()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        profile = request.user.profile
+        new_comment = Comment(content=request.POST.get('content'), blog=self.get_object(), profile=profile)
+        new_comment.save()
+        return self.get(self, request, *args, **kwargs)
+
 
 class Blog_Create(CreateView):
     model = Blog
-    fields = ['title', 'img', 'post', 'profile', 'city']
+    fields = ['title', 'img', 'post', 'profile', 'city', 'reccomendation']
     template_name = 'blog/blog_create.html'
     success_url = '/user/profile'
 
     def get_initial(self):
-        return {'profile': self.kwargs.get("pk"), 'reccomendation': self.kwargs.get('reccomendation')}
-
-    def get_success_url(self):
-        pk = self.object.pk
-        return reverse('blog', kwargs={'pk': pk})
-
+        return {'profile': self.kwargs.get("pk")}
 
 class Blog_Update(UpdateView):
     model = Blog
@@ -51,3 +60,7 @@ class Blog_Delete(DeleteView):
     def get_success_url(self):
         pk = self.object.city.pk
         return reverse('city', kwargs={'pk': pk})
+
+
+    
+

@@ -624,7 +624,6 @@ option {
   transform: translate(-60%, -90%);
   z-index: -3;
 }
-
 @media (max-width: 48rem) {
   .welcome-tagline {
     padding-top: 1.75rem;

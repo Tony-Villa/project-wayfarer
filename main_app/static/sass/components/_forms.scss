@@ -97,3 +97,10 @@
     display: none;
   }
 }
+
+.cancel-delete {
+  font-size: get-font-size(8);
+  font-family: $content-font;
+  color: $light-bg;
+  margin-left: get-font-size(7);
+}

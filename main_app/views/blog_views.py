@@ -13,6 +13,7 @@ from main_app.forms import CommentForm
 from main_app.models.blog_model import Blog, Comment, Profile 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django import forms
 
 
 @method_decorator(login_required, name='dispatch')
@@ -43,7 +44,7 @@ class Blog_Create(CreateView):
     success_url = '/user/profile'
 
     def get_initial(self):
-        return {'profile': self.kwargs.get("pk")}
+        return {'profile': self.kwargs.get("pk"), 'reccomendation' : 1}
 
 class Blog_Update(UpdateView):
     model = Blog

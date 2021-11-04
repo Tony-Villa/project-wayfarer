@@ -13,8 +13,7 @@ from main_app.forms import CommentForm
 from main_app.models.blog_model import Blog, Comment, Profile 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.views.generic import FormView
-from django.views.generic.detail import SingleObjectMixin
+
 
 @method_decorator(login_required, name='dispatch')
 class Blog_View(DetailView):
@@ -23,7 +22,7 @@ class Blog_View(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form'] = CommentForm()
+        context['form'] = CommentForm(initial={'blog': self.get_object(), 'profile': self.request.user.profile})
         return context
 
     def post(self, request, *args, **kwargs):
@@ -31,6 +30,10 @@ class Blog_View(DetailView):
         new_comment = Comment(content=request.POST.get('content'), blog=self.get_object(), profile=profile)
         new_comment.save()
         return self.get(self, request, *args, **kwargs)
+
+    def comments(request):
+        comments_count = Comment.objects.all()
+        return render(request, {'comments_count': comments_count})
 
 
 class Blog_Create(CreateView):

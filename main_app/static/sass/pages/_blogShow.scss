@@ -1,0 +1,14 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.blog-content {
+  margin-top: get-spacing(15);
+}
+
+.post-content {
+  justify-content: center;
+}
+
+.user-post-options {
+  justify-content: flex-end;
+}

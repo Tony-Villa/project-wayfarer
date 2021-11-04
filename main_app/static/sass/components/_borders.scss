@@ -11,6 +11,11 @@
   // border-image-slice: 1;
 }
 
+.accent-border-thin {
+  border: 1.5px solid #ff964d;
+  border-radius: get-size(6);
+}
+
 .page-header {
   position: relative;
   display: inline-block;

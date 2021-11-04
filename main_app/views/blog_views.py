@@ -13,6 +13,7 @@ from main_app.forms import CommentForm
 from main_app.models.blog_model import Blog, Comment, Profile 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django import forms
 
 
 @method_decorator(login_required, name='dispatch')

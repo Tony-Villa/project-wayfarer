@@ -562,6 +562,10 @@ option {
   background-size: 100% 3px;
 }
 
+.blog-create-form :nth-child(5) {
+  display: none;
+}
+
 .flex {
   display: flex;
 }

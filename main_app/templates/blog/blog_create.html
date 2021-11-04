@@ -5,7 +5,8 @@
     <div class="form-content flex r-border l-border">
       <h1 class="title"></h1>
       <h1 class="form-title header-font">New Blog</h1>
-      <form autocomplete="off" class="django-form" method="post">
+
+      <form autocomplete="off" class="django-form blog-create-form" method="post">
         {%csrf_token%} {{form.as_p}}
         <input type="submit" class="btn" value="Sign Up" />
         <input type="hidden" name="next" value="{{ next }}" />

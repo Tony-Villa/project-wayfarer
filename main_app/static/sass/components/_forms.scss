@@ -87,3 +87,9 @@
     }
   }
 }
+
+.blog-create-form {
+  :nth-child(5) {
+    display: none;
+  }
+}

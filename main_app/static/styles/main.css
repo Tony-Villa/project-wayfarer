@@ -651,7 +651,6 @@ option {
   transform: translate(-60%, -90%);
   z-index: -3;
 }
-
 @media (max-width: 48rem) {
   .welcome-tagline {
     padding-top: 1.75rem;
@@ -847,12 +846,12 @@ option {
   justify-content: flex-end;
 }
 
-
 .comment-container {
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
 .profile-info {
   flex-direction: column;
@@ -879,7 +878,6 @@ option {
   justify-content: flex-end;
   align-items: flex-end;
   margin-bottom: 1rem;
-
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -13,12 +13,16 @@
 
   <div class="content-container flex city-show-bottom">
     <div class="quarter-width accent-border pad-sect pad-sect-top city-show-city-container">
-      <p>City Container</p>
+      <h3 class="sub-head-font">Check out some other cities!</h3>
       {% for city in cities %}
 
-      <div style="display: flex; padding-bottom: 10px">
-        <img style="height: 50px; width: 50px" src="{{city.img}}" />
-        <p>{{city.name}}</p>
+      <!--  -->
+      <div class="city-side-card">
+        <a href="{% url 'city' city.pk %}">
+          <div class="side-city-img">
+            <img class="side-city-img-content" src="{{city.img}}" alt="" />
+          </div>
+        </a>
       </div>
 
       {% endfor %}

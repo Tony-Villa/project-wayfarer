@@ -44,7 +44,7 @@ class Blog_Create(CreateView):
     success_url = '/user/profile'
 
     def get_initial(self):
-        return {'profile': self.kwargs.get("pk")}
+        return {'profile': self.kwargs.get("pk"), 'reccomendation' : 1}
 
 class Blog_Update(UpdateView):
     model = Blog

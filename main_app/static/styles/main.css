@@ -565,6 +565,9 @@ option {
 .blog-create-form :nth-child(5) {
   display: none;
 }
+.blog-create-form :nth-child(7) {
+  display: none;
+}
 
 .flex {
   display: flex;

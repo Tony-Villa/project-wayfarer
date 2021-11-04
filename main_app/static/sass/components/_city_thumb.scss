@@ -142,11 +142,17 @@
   }
 }
 
+.city-side-card:hover .side-city-img-content {
+  opacity: 0.4;
+}
+
 .side-city-img-content {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 1;
+  transition: opacity 300ms ease-out;
 }
 
 .side-city-title {

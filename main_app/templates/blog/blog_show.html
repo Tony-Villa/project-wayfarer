@@ -12,8 +12,11 @@
   </div>
 </div>
 
-<div class="content-container">
-    <p class="content-font">{{ blog.post }}</p>
+<div class="content-container blog-content">
+    <div class="flex post-content">
+        <p class="content-font thin-content">{{ blog.post | linebreaksbr }}</p>
+
+    </div>
 
     <div class="user-post-options flex">
         <a href="{% url 'blog_update' blog.pk %}"><button class="post-edit-btn"><i class="fas fa-edit"></i></button></a>

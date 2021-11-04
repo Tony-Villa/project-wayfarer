@@ -50,6 +50,10 @@ body {
   text-decoration: none;
 }
 
+.thin-content {
+  width: 80%;
+}
+
 .header-font {
   font-family: "Yantramanav", sans-serif;
 }
@@ -725,6 +729,14 @@ option {
 
 .city-show-city-container {
   margin-top: 1.75rem;
+}
+
+.blog-content {
+  margin-top: 3.25rem;
+}
+
+.post-content {
+  justify-content: center;
 }
 
 .user-post-options {

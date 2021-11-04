@@ -13,6 +13,10 @@
   justify-content: flex-end;
 }
 
+.blog-font-grow {
+  font-size: get-font-size(8);
+}
+
 .comment-container {
   width: 100%;
   flex-direction: column;

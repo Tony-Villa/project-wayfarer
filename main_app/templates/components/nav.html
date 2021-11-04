@@ -11,18 +11,20 @@
     </section>
     {% if user.is_authenticated %}
     <div class="search-content">
-      <section class="search-bar flex">
-        <input
-          class="search-bar-input content-font text-bold"
-          type="text"
-          placeholder="Search for City"
-          aria-label="search"
-        />
-        <!-- <a href=""><i class="fas fa-search"></i></a> -->
-        <button class="search-btn search-bar-submit" aria-label="submit search">
-          <i class="fas fa-search" style="color: black"></i>
-        </button>
-      </section>
+      <form action="/city" method="get" autocomplete="off">
+        <section class="search-bar flex">
+          <input
+            class="search-bar-input content-font text-bold"
+            type="text"
+            name="city"
+            placeholder="Search for City"
+            aria-label="search"
+          />
+          <button class="search-btn search-bar-submit" aria-label="submit search" type="submit" value="Search">
+            <i class="fas fa-search" style="color: black"></i>
+          </button>
+        </section>
+      </form>
     </div>
 
     <section class="all-cities-link">

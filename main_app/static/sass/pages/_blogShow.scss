@@ -12,3 +12,10 @@
 .user-post-options {
   justify-content: flex-end;
 }
+
+.comment-container {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

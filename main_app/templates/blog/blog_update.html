@@ -10,7 +10,9 @@
       {% if request.user.is_authenticated and request.user.profile.pk == blog.profile.pk %}
 
       <form action="" method="post">
-        {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit" />
+        {% csrf_token %} {{form.as_p}} 
+        <!--  -->
+      <input type="submit" value="Submit" />
       </form>
     {% else %}
       <p>Nope</p>

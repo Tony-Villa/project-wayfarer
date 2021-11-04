@@ -73,3 +73,21 @@
     font-size: get-font-size(10);
   }
 }
+
+.error-btn-link {
+  outline: none;
+  border: none;
+  padding: 0.75rem;
+  background: rgb(175, 44, 44);
+
+  font-size: get-font-size(8);
+  font-family: $content-font;
+  color: $light-bg;
+  margin-left: get-font-size(7);
+
+  cursor: pointer;
+}
+
+.cancel-options {
+  margin-top: 1rem;
+}

@@ -1,21 +1,18 @@
-{% extends 'layout/base.html' %} 
-{% block content %}
-<h1>New City</h1>
+{% extends 'layout/base.html' %} {% block content %}
 
-<form style='display:flex; flex-direction: column;' method="post">
-<!-- Security Feature  -->
-  {% csrf_token %} 
-<!--  Generate inputs  -->
-    <label class='form-input' for="{{ form.name.id_for_label }}">City Name: </label>
-    {{form.name}}
-    
-    <label class='form-input' for="{{ form.img.id_for_label }}">Image URL: </label>
-    {{form.img}}
-    <label class='form-input' for="{{ form.city.id_for_label }}">Country: </label>
-    {{form.country}}
-  <!-- {{form.as_p}}  -->
-<!--  Submit form  -->
-  <input style='background-color: green;' type="submit" value="Submit" />
-</form>
+<div class="content-container">
+  <div class="form-center flex">
+    <div class="form-content flex r-border l-border">
+      <h1 class="title"></h1>
+      <h1 class="form-title header-font">New City</h1>
+
+      <form autocomplete="off" class="django-form" method="post">
+        {%csrf_token%} {{form.as_p}}
+        <input type="submit" class="btn" value="Add City" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

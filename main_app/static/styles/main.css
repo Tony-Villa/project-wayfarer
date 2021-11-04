@@ -154,6 +154,22 @@ option {
   font-size: 2rem;
 }
 
+.error-btn-link {
+  outline: none;
+  border: none;
+  padding: 0.75rem;
+  background: #af2c2c;
+  font-size: 1.5rem;
+  font-family: "Libre Franklin", sans-serif;
+  color: #e9f1f7;
+  margin-left: 1.25rem;
+  cursor: pointer;
+}
+
+.cancel-options {
+  margin-top: 1rem;
+}
+
 .accent-border {
   border: 4px solid #ff964d;
   border-radius: 1rem;
@@ -193,10 +209,12 @@ option {
 
 .r-border {
   border-right: 3px solid #ff964d;
+  padding-left: 1rem;
 }
 
 .l-border {
   border-left: 3px solid #ff964d;
+  padding-right: 1rem;
 }
 
 .city-card {
@@ -569,6 +587,13 @@ option {
   display: none;
 }
 
+.cancel-delete {
+  font-size: 1.5rem;
+  font-family: "Libre Franklin", sans-serif;
+  color: #e9f1f7;
+  margin-left: 1.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -937,6 +962,50 @@ option {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.comment-content-input {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  font-size: 1.75rem;
+}
+.comment-content-input label {
+  display: none;
+}
+.comment-content-input textarea {
+  width: 35rem;
+  height: 15rem;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+.comment-content-input p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+.comment-content-input p input {
+  margin: 0.5rem 30%;
+  padding-bottom: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-family: "Martel Sans", sans-serif;
+  color: #e9f1f7;
+  background-image: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  text-decoration: none;
+  transition: background-size 300ms ease;
+  cursor: pointer;
+}
+.comment-content-input p input:hover {
+  background-size: 100% 3px;
 }
 
 .profile-info {

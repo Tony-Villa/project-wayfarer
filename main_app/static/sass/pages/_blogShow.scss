@@ -19,3 +19,56 @@
   justify-content: center;
   align-items: center;
 }
+
+.comment-content-input {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  font-size: get-font-size(9);
+
+  label {
+    display: none;
+  }
+
+  textarea {
+    width: 35rem;
+    height: 15rem;
+    font-family: $content-font;
+    font-size: get-font-size(7);
+    padding: 1rem;
+  }
+
+  p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+  }
+
+  p input {
+    margin: 0.5rem 30%;
+    padding-bottom: 0.5rem;
+
+    background: none;
+    border: none;
+
+    font-size: get-font-size(7);
+    font-family: $sub-head-font;
+    color: $light-bg;
+
+    background-image: $accent-gradient;
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    text-decoration: none;
+    transition: background-size 300ms ease;
+
+    cursor: pointer;
+
+    &:hover {
+      background-size: 100% 3px;
+    }
+  }
+}

@@ -33,14 +33,29 @@
     <br />
     <br />
   
-    {% if not blog.blogs.all %} No Comments Yet... {% else %} {% for comment in blog.blogs.all reversed %}
-    {{comment.profile.name }} {{comment.created_at | timesince }}
-    <p>ago</p>
-    <br />
-    {{comment.content}}
-    <br />
-    <br />
-    {% endfor %} {% endif %} 
+    <div class="comment-container flex">
+    {% if not blog.blogs.all %} 
+    <h3 class="content-font">
+      No Comments Yet... 
+    </h3>
+    {% else %} 
+    {% for comment in blog.blogs.all reversed %}
+        <div class="comment-info flex">
+          <h3 class="content-font">
+            {{comment.profile.name }} 
+          </h3>
+          <!--  -->
+          <h5 class="content-font">
+            {{comment.created_at | timesince }} ago
+          </h5>
+        </div>
+        <div class="comment-content content-font">
+          {{comment.content}}
+        </div>
+        {% endfor %} 
+        <!--  -->
+        {% endif %} 
+      </div>
 </div>
 {% endblock %}
 </div>

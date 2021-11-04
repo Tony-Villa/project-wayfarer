@@ -21,6 +21,10 @@
         <a href="{% url 'city' city.pk %}">
           <div class="side-city-img">
             <img class="side-city-img-content" src="{{city.img}}" alt="" />
+            <div div class="city-card-content">
+              <h2 class="side-city-title header-font">{{city.name}}</h2>
+              <p class="side-city-country header-font">{{city.country}}</p>
+            </div>
           </div>
         </a>
       </div>

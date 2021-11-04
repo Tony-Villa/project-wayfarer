@@ -12,19 +12,22 @@
   </div>
 
   <div class="content-container flex city-show-bottom">
-    <div class="quarter-width accent-border pad-sect">
+    <div class="quarter-width accent-border pad-sect pad-sect-top city-show-city-container">
       <p>City Container</p>
       {% for city in cities %}
-      <div style='display: flex;padding-bottom: 10px;'>
-        <img style='height: 50px; width: 50px;' src='{{city.img}}'>
+      <div style="display: flex; padding-bottom: 10px">
+        <img style="height: 50px; width: 50px" src="{{city.img}}" />
         <p>{{city.name}}</p>
       </div>
       {% endfor %}
     </div>
-    
+
     <div class="three-quarter-width pad-sect">
       <div class="flex city-show-create">
-        <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
+        <h4 class="create-blog-header sub-head-font">Create a blog</h4>
+        <a class="circle-btn-link" href="{% url 'blog_create' user.profile.pk %}">
+          <span>+</span>
+        </a>
       </div>
       <div class="blog-container">
         {% for blog in blogs reversed %}

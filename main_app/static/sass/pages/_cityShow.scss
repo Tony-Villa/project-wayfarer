@@ -37,6 +37,22 @@
   }
 }
 
+.city-show-create {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: get-spacing(6);
+}
+
 .pad-sect {
-  padding: get-spacing(8);
+  padding-left: get-spacing(8);
+  padding-right: get-spacing(8);
+}
+
+.pad-sect-top {
+  padding-top: get-spacing(8);
+}
+
+.city-show-city-container {
+  margin-top: get-spacing(9);
 }

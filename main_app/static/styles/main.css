@@ -126,6 +126,30 @@ option {
   transform: translate(-50%, -50%);
 }
 
+.post-edit-btn {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0 0.75rem;
+}
+.post-edit-btn i {
+  color: #e9f1f7;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.delete-btn {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0 0.75rem;
+}
+.delete-btn i {
+  color: red;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
 .accent-border {
   border: 4px solid #ff964d;
   border-radius: 1rem;
@@ -683,8 +707,28 @@ option {
   text-shadow: 2px 3px 2px #242323;
 }
 
+.city-show-create {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
 .pad-sect {
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.pad-sect-top {
+  padding-top: 1.5rem;
+}
+
+.city-show-city-container {
+  margin-top: 1.75rem;
+}
+
+.user-post-options {
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=main.css.map */

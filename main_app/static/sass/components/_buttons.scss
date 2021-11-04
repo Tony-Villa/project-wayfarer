@@ -47,3 +47,29 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.post-edit-btn {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0 0.75rem;
+
+  i {
+    color: $light-bg;
+    cursor: pointer;
+    font-size: get-font-size(10);
+  }
+}
+
+.delete-btn {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0 0.75rem;
+
+  i {
+    color: red;
+    cursor: pointer;
+    font-size: get-font-size(10);
+  }
+}

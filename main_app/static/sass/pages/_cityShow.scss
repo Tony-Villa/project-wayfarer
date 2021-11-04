@@ -1,6 +1,9 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
 
+.intro-container {
+  overflow-x: hidden;
+}
 .banner-container {
   width: 100vw;
   position: relative;
@@ -17,6 +20,40 @@
   z-index: -2;
 }
 
+.banner-info {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h1 {
+    font-size: get-font-size(23);
+    text-shadow: 2px 3px 2px #242323;
+  }
+
+  h4 {
+    font-size: get-font-size(12);
+    text-shadow: 2px 3px 2px #242323;
+  }
+}
+
+.city-show-create {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: get-spacing(6);
+}
+
 .pad-sect {
-  padding: get-spacing(8);
+  padding-left: get-spacing(8);
+  padding-right: get-spacing(8);
+}
+
+.pad-sect-top {
+  padding-top: get-spacing(8);
+}
+
+.city-show-city-container {
+  margin-top: get-spacing(9);
+  z-index: -5;
 }

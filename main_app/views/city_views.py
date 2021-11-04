@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from main_app.models.city_model import City
 from random import choice
+from django.core.paginator import Paginator
 
 @method_decorator(login_required, name='dispatch')
 class City_List(TemplateView):
@@ -34,7 +35,10 @@ class City_View(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['blogs'] = Blog.objects.all()
+        p = Paginator(Blog.objects.filter(city=self.object.pk), 3)
+        page = self.request.GET.get('page')
+        blog_list = p.get_page(page)
+        context['blog_list'] = blog_list
         context['cities'] = City.objects.all().order_by('?')[:5]
         return context
         

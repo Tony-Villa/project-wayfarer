@@ -25,7 +25,7 @@
       </a>
     </div>
     <div class="profile-blogs three-quarter-width">
-      {% for blog in blogs %}
+      {% for blog in blog_list %}
       <!--  -->
       {% if blog.profile == user.profile %}
       <div class="blog-card-container">
@@ -63,4 +63,16 @@
     </div>
   </div>
 </div>
+
+{% if blog_list.has_previous %}
+  <a href="?page=1">&laquo First</a>
+  <a href="?page={{ blog_list.previous_page_number }}">Previous</a>
+{% endif %}
+
+Page {{ blog_list.number }} of {{ blog_list.paginator.num_pages }}
+
+{% if blog_list.has_next %}
+  <a href="?page={{ blog_list.next_page_number }}">Next</a>
+  <a href="?page={{ blog_list.paginator.num_pages }}">Last &raquo</a>
+{% endif %}
 {% endblock %}

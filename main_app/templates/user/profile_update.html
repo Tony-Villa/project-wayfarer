@@ -1,15 +1,23 @@
-{% extends 'layout/base.html' %} 
-{% block content %}
-<h1 class="pt-3">Update {{profile.name}}</h1>
+{% extends 'layout/base.html' %} {% block content %}
+<div class="content-container">
+  <div class="form-center flex">
+    <div class="form-content flex r-border l-border">
+      <h1 class="form-title header-font">Update {{profile.name}}</h1>
 
-{% if request.user.is_authenticated and request.user.profile.user == profile.user %}
+      {% if request.user.is_authenticated and request.user.profile.user == profile.user %}
 
-  <form action="" method="post">
-    {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit" />
-  </form>
+      <form autocomplete="off" class="django-form" method="post">
+        {%csrf_token%} {{form.as_p}}
+        <input type="submit" class="btn" value="Sign Up" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    </div>
+  </div>
+</div>
+
 {% else %}
-  <p>Nope</p>
+<p>Nope</p>
 
 {% endif %}
-
+<!--  -->
 {% endblock %}

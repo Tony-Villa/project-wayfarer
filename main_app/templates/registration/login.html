@@ -1,11 +1,16 @@
-{% extends 'layout/base.html' %} 
-{% block content %}
+{% extends 'layout/base.html' %} {% block content %}
 
-<h1 class="title">Log In</h1>
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" class="btn" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
+<div class="content-container">
+  <div class="form-center flex">
+    <div class="form-content flex r-border l-border">
+      <h1 class="form-title header-font">Log In</h1>
+      <form autocomplete="off" class="django-form" method="post" action="{% url 'login' %}">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" class="btn" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

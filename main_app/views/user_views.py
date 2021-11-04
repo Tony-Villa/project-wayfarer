@@ -12,7 +12,7 @@ from ..models.user_model import Profile
 from main_app.models.user_model import User, Profile 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-
+from django.core.paginator import Paginator
 
 class Signup(View):
     # show a form to fill out
@@ -37,9 +37,12 @@ class Profile_View(TemplateView):
     template_name='user/profile.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(Profile_View, self).get_context_data(**kwargs)
+        p = Paginator(Blog.objects.filter(profile=self.request.user.profile), 3)
+        page = self.request.GET.get('page')
+        blog_list = p.get_page(page)
+        context['blog_list'] = blog_list
         context['profile'] =  Profile.objects.filter(user = self.request.user)
-        context['blogs'] = Blog.objects.all()
         return context
         
 @method_decorator(login_required, name='dispatch')

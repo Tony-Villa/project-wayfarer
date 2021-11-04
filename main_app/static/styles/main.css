@@ -456,6 +456,33 @@ option {
   clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 }
 
+.comment-info {
+  margin-bottom: 0.15rem;
+  padding: 0 3rem;
+  justify-content: space-between;
+  min-width: 70%;
+}
+
+.comment-content {
+  background-color: #e9f1f7;
+  position: relative;
+  padding: 20px;
+  color: #0c1b33;
+  min-width: 70%;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+}
+.comment-content::before {
+  content: "";
+  position: absolute;
+  height: 1rem;
+  top: -0.9rem;
+  left: 20px;
+  width: 25px;
+  background-color: #e9f1f7;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
 .flex {
   display: flex;
 }
@@ -820,6 +847,13 @@ option {
   justify-content: flex-end;
 }
 
+
+.comment-container {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 .profile-info {
   flex-direction: column;
   justify-content: center;
@@ -845,6 +879,7 @@ option {
   justify-content: flex-end;
   align-items: flex-end;
   margin-bottom: 1rem;
+
 }
 
 /*# sourceMappingURL=main.css.map */

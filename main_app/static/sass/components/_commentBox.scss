@@ -1,0 +1,30 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.comment-info {
+  margin-bottom: 0.15rem;
+  padding: 0 3rem;
+  justify-content: space-between;
+  min-width: 70%;
+}
+
+.comment-content {
+  background-color: $light-bg;
+  position: relative;
+  padding: 20px;
+  color: $bg-color;
+  min-width: 70%;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: get-size(6);
+    top: -0.9rem;
+    left: 20px;
+    width: 25px;
+    background-color: $light-bg;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+}

@@ -79,21 +79,33 @@
         <!--  -->
         {% endfor %}
       </div>
+
+      <div class="pagination-container flex">
+        <h3 class="content-font">Page {{ blog_list.number }} of {{ blog_list.paginator.num_pages }}</h3>
+
+        <div class="arrow-content flex">
+          <div class="back-page flex">
+            {% if blog_list.has_previous %}
+            <a class="content-font under-link" href="?page=1">&laquo First</a>
+            <a class="l-margin no-dec" href="?page={{ blog_list.previous_page_number }}">
+              <h4 class="content-font under-link"><i class="fas fa-chevron-left"> </i> Prev Page</h4>
+            </a>
+            {% endif %}
+          </div>
+
+          <div class="forward-page flex">
+            {% if blog_list.has_next %}
+            <a class="r-margin no-dec" href="?page={{ blog_list.next_page_number }}">
+              <h4 class="content-font under-link">Next Page <i class="fas fa-chevron-right"></i></h4>
+            </a>
+
+            <a class="content-font under-link" href="?page={{ blog_list.paginator.num_pages }}">Last &raquo</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
+
+    {% endblock %}
   </div>
 </div>
-
-{% if blog_list.has_previous %}
-  <a href="?page=1">&laquo First</a>
-  <a href="?page={{ blog_list.previous_page_number }}">Previous</a>
-{% endif %}
-
-Page {{ blog_list.number }} of {{ blog_list.paginator.num_pages }}
-
-{% if blog_list.has_next %}
-  <a href="?page={{ blog_list.next_page_number }}">Next</a>
-  <a href="?page={{ blog_list.paginator.num_pages }}">Last &raquo</a>
-{% endif %}
-
-
-{% endblock %}

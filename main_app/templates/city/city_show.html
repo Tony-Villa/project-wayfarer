@@ -5,9 +5,11 @@
 <div class="intro-container">
   <div class="banner-container">
     <img class="city-show-banner" src="{{ city.img }}" />
+    <div class="banner-info flex">
+      <h1 class="header-font">{{ city.name }}</h1>
+      <h4 class="sub-head-font">{{ city.country }}</h4>
+    </div>
   </div>
-  <h2>{{ city.name }}</h2>
-  <p>{{ city.country }}</p>
 
   <div class="content-container flex city-show-bottom">
     <div class="quarter-width accent-border pad-sect">
@@ -16,7 +18,9 @@
     <div class="three-quarter-width pad-sect">
       <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
       <div class="blog-container">
-        {% for blog in blogs reversed %} {% if blog.city == city %}
+        {% for blog in blogs reversed %}
+        <!--  -->
+        {% if blog.city == city %}
         <div class="blog-card-container">
           <div class="blog-card-img">
             <img class="blog-card-img-content" src="{{blog.img}}" alt="" />
@@ -25,7 +29,9 @@
           <div class="blog-card-details flex">
             <div class="title-info">
               <h3 class="blog-card-title">
-                <a class="header-font no-dec font-bold" href="{% url 'blog' blog.pk %}"> {{ blog.title }} </a>
+                <a class="test-class header-font no-dec font-bold" href="{% url 'blog' blog.pk %}">
+                  {{ blog.title }}
+                </a>
               </h3>
             </div>
 

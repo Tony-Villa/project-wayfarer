@@ -1,24 +1,66 @@
 {% extends 'layout/base.html' %}
 <!--  -->
 {% block content %}
-<h1>This is the profile</h1>
-<p>{{ user.username }}</p>
 
+<div class="content-container">
+  <div class="profile-info flex">
+    <h1 class="header-font">{{ user.username }}</h1>
+    <img class="profile-thumb" src="{{user.profile.img}}" alt="" />
 
+    <div class="profile-options flex">
+      <a href="{% url 'profile_update' user.profile.pk %}"
+        ><button class="post-edit-btn"><i class="fas fa-user-edit"></i></button
+      ></a>
+      <a class="delete-btn" href="{% url 'profile_delete' user.profile.pk %}"
+        ><button class="delete-btn"><i class="fas fa-trash-alt"></i></button
+      ></a>
+    </div>
+  </div>
 
-<a href="{% url 'profile_update' user.profile.pk %}"><button style='background-color: green;padding:10px;'>edit</button></a>
-<a href="{% url 'profile_delete' user.profile.pk %}"><button style='background-color: red;padding:10px;'>Delete</button></a>
-<br>
-<br>
-<a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
+  <div class="profile-blog-content">
+    <div class="profile-create-blog flex">
+      <h4 class="create-blog-header sub-head-font">Create a blog</h4>
+      <a class="circle-btn-link" href="{% url 'blog_create' user.profile.pk %}">
+        <span>+</span>
+      </a>
+    </div>
+    <div class="profile-blogs three-quarter-width">
+      {% for blog in blogs %}
+      <!--  -->
+      {% if blog.profile == user.profile %}
+      <div class="blog-card-container">
+        <div class="blog-card-img">
+          <img class="blog-card-img-content" src="{{blog.img}}" alt="" />
+        </div>
 
+        <div class="blog-card-details flex">
+          <div class="title-info">
+            <h3 class="blog-card-title">
+              <a class="test-class header-font no-dec font-bold" href="{% url 'blog' blog.pk %}"> {{ blog.title }} </a>
+            </h3>
+          </div>
 
-{% for blog in blogs %}
-{% if blog.profile == user.profile %}
-<p><a href="{% url 'blog' blog.pk %}"> {{ blog.title }}</a></p>
+          <div class="author-info">
+            <h5 class="blog-card-author sub-head-font">
+              <i class="fas fa-pencil-alt" style="color: black"></i> {{blog.profile.name}}
+            </h5>
+          </div>
 
+          <div class="blog-card-content">
+            <p class="content-font">{{blog.post | truncatechars:150}}</p>
+          </div>
 
-
-{% endif %}
-{% endfor %}
+          <div class="blog-card-btn-container">
+            <a class="no-dec sub-head-font blog-card-btn blog-card-btn-icon" href="{% url 'blog' blog.pk %}"
+              ><i class="fas fa-arrow-right" style="color: black"></i> Read Blog</a
+            >
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <!--  -->
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}

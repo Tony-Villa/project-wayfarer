@@ -797,4 +797,31 @@ option {
   justify-content: flex-end;
 }
 
+.profile-info {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-between;
+  height: 20rem;
+}
+.profile-info h1 {
+  font-size: 2.5rem;
+}
+
+.profile-thumb {
+  border-radius: 50%;
+}
+
+.profile-blogs {
+  margin: 0 auto;
+}
+
+.profile-create-blog {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=main.css.map */

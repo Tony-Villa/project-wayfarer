@@ -23,15 +23,14 @@
         <a href="{% url 'blog_delete' blog.pk %}"><button class="delete-btn"><i class="fas fa-trash-alt"></i></button></a>
     </div>
   
-  
+  <div class="comment-content-input flex">
     <h2>Add a new comment</h2>
     <form action="{% url 'blog' blog.pk %}" method="post">
       {% csrf_token %} {{ form.as_p }}
       <p><input type="submit" value="Add comment" /></p>
     </form>
-    <br />
-    <br />
-    <br />
+  </div>
+ 
   
     <div class="comment-container flex">
     {% if not blog.blogs.all %} 

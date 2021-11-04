@@ -964,6 +964,28 @@ option {
   align-items: center;
 }
 
+.comment-content-input {
+  border: 1px solid white;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+.comment-content-input label {
+  display: none;
+}
+.comment-content-input textarea {
+  width: 25rem;
+}
+.comment-content-input p {
+  width: 100%;
+}
+.comment-content-input p input {
+  border: 1px solid yellow;
+  margin: 0 auto;
+}
+
 .profile-info {
   flex-direction: column;
   justify-content: center;

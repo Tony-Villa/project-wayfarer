@@ -1,0 +1,31 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.profile-info {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-between;
+
+  height: 20rem;
+
+  h1 {
+    font-size: get-font-size(12);
+  }
+}
+
+.profile-thumb {
+  border-radius: 50%;
+}
+
+.profile-blogs {
+  margin: 0 auto;
+}
+
+.profile-create-blog {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: get-spacing(6);
+}

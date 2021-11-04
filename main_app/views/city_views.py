@@ -12,6 +12,7 @@ from main_app.models.blog_model import Blog
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from main_app.models.city_model import City
+from random import choice
 
 @method_decorator(login_required, name='dispatch')
 class City_List(TemplateView):
@@ -30,6 +31,7 @@ class City_View(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['blogs'] = Blog.objects.all()
+        context['cities'] = City.objects.all()
         return context
         
 

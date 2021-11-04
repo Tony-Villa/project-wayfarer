@@ -16,7 +16,9 @@
       <p>City Container</p>
     </div>
     <div class="three-quarter-width pad-sect">
-      <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
+      <div class="flex city-show-create">
+        <a href="{% url 'blog_create' user.profile.pk %}">Create Blog</a>
+      </div>
       <div class="blog-container">
         {% for blog in blogs reversed %}
         <!--  -->

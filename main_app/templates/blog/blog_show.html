@@ -23,7 +23,7 @@
         <a href="{% url 'blog_delete' blog.pk %}"><button class="delete-btn"><i class="fas fa-trash-alt"></i></button></a>
     </div>
   
-  <div class="comment-content-input flex">
+  <div class="comment-content-input flex header-font">
     <h2>Add a new comment</h2>
     <form action="{% url 'blog' blog.pk %}" method="post">
       {% csrf_token %} {{ form.as_p }}

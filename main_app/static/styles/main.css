@@ -965,25 +965,47 @@ option {
 }
 
 .comment-content-input {
-  border: 1px solid white;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 2rem auto;
+  font-size: 1.75rem;
 }
 .comment-content-input label {
   display: none;
 }
 .comment-content-input textarea {
-  width: 25rem;
+  width: 35rem;
+  height: 15rem;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 1.25rem;
+  padding: 1rem;
 }
 .comment-content-input p {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
 }
 .comment-content-input p input {
-  border: 1px solid yellow;
-  margin: 0 auto;
+  margin: 0.5rem 30%;
+  padding-bottom: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-family: "Martel Sans", sans-serif;
+  color: #e9f1f7;
+  background-image: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  text-decoration: none;
+  transition: background-size 300ms ease;
+  cursor: pointer;
+}
+.comment-content-input p input:hover {
+  background-size: 100% 3px;
 }
 
 .profile-info {

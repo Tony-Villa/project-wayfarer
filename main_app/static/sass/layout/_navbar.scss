@@ -123,3 +123,16 @@
   text-decoration: none;
   font-size: get-font-size(6);
 }
+
+.clear-search {
+  position: absolute;
+  left: 15.5%;
+  top: 98%;
+  cursor: pointer;
+
+  // .clear-icon i {
+  //   font-size: get-font-size(11);
+  //   line-height: get-font-size(10);
+  //   color: red;
+  // }
+}

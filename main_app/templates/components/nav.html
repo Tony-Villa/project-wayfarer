@@ -27,6 +27,13 @@
       </form>
     </div>
 
+    <div class="clear-search">
+      {% if '?' in request.get_full_path %}
+      <a class="no-dec" href="/city">
+        <h4 class="sub-head-font clear-icon under-link"><i class="fas fa-times-circle"></i> Clear Search</i></h4>
+      </a>
+        {% endif %}
+      </div>
     <section class="all-cities-link">
       <a class="no-dec sub-head-font under-link" href="/city">Browse Cities</a>
     </section>

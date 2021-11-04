@@ -739,6 +739,13 @@ option {
   font-size: 1rem;
 }
 
+.clear-search {
+  position: absolute;
+  left: 15.5%;
+  top: 98%;
+  cursor: pointer;
+}
+
 .quarter-width {
   width: 25%;
   margin: 1rem;

@@ -31,7 +31,7 @@ class City_View(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['blogs'] = Blog.objects.all()
-        context['cities'] = City.objects.all()
+        context['cities'] = City.objects.all().order_by('id')[:5]
         return context
         
 

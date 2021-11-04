@@ -195,6 +195,10 @@ option {
   border-right: 3px solid #ff964d;
 }
 
+.l-border {
+  border-left: 3px solid #ff964d;
+}
+
 .city-card {
   position: relative;
   min-width: 20rem;
@@ -481,6 +485,81 @@ option {
   width: 25px;
   background-color: #e9f1f7;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.form-center {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.form-title {
+  font-size: 2.5rem;
+}
+
+.form-content {
+  height: fit-content;
+  width: 35%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.django-form {
+  margin: 1.5rem auto;
+  padding: 0 3rem;
+}
+.django-form p {
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+}
+.django-form p label {
+  font-size: 1.25rem;
+  font-family: "Martel Sans", sans-serif;
+  color: #e9f1f7;
+}
+.django-form p span {
+  color: #e9f1f7;
+  font-family: "Libre Franklin", sans-serif;
+  width: 75%;
+  margin: 0.75rem auto;
+}
+.django-form ul {
+  color: #e9f1f7;
+  font-family: "Libre Franklin", sans-serif;
+  width: 75%;
+  margin: -1.75rem auto;
+}
+.django-form input {
+  height: 2.75rem;
+  line-height: 2rem;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 0 0.5rem;
+}
+.django-form input:focus {
+  outline: orange;
+}
+.django-form input.btn {
+  margin: 0.5rem 30%;
+  padding-bottom: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  font-family: "Martel Sans", sans-serif;
+  color: #e9f1f7;
+  background-image: linear-gradient(to right bottom, #fba31e, #ff9b3a, #ff954f, #ff9162, #ff8e72);
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  text-decoration: none;
+  transition: background-size 300ms ease;
+  cursor: pointer;
+}
+.django-form input.btn:hover {
+  background-size: 100% 3px;
 }
 
 .flex {

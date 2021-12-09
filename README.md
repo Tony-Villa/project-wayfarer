@@ -45,9 +45,11 @@ When creating a blog post, the user will be greeted with a form that will ask fo
 
 Wireframes go here...
 
+
 # ERDs
 
-ERDs go here...
+![Screen Shot 2021-12-09 at 11 27 35 AM](https://user-images.githubusercontent.com/68616195/145445955-a8d54a3d-053f-4edd-abbe-941a8afdd9a8.png)
+ 
 
 # Technologies
 
